@@ -18,9 +18,9 @@ print('start')
 
 
 
-dt = 0.01
+dt = 0.001
 steps = 150000
-
+nplanets=len(x)
 
 
 G=6.67430e-11
@@ -76,9 +76,9 @@ def step(x, y, vx, vy, m, dt=dt):
 
 
 
-T=np.zeros(8) #periods
-osccount=np.zeros(8)
-avT=np.zeros(8) #average period for planets with multiple cycles completed 
+T=np.zeros(nplanets-1) #periods
+osccount=np.zeros(nplanets-1)
+avT=np.zeros(nplanets-1) #average period for planets with multiple cycles completed 
 
 j=0
 
@@ -112,7 +112,7 @@ with open("simulation_data_planets.txt", "w") as f:
 
         T[:]=T[:]+dt
 
-        for k in range(8):
+        for k in range(nplanets-1):
             if prevy[k+1]-prevy[0]<0. and y[k+1]-y[0]>=0.:
                 osccount[k]=osccount[k] + 1
                 avT[k]=avT[k] + T[k]
