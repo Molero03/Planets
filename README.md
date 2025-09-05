@@ -4,4 +4,7 @@ The project consists of a Python program that simulates the dynamics of the sola
 
 In order to visualize the data, you can use the program "animation.py". By changing the value of 'limit' in the code, you can see dynamics of inner or outer planets. <br /> 
 
+![Innerplanets](https://github.com/Molero03/Particles/blob/main/innerplanets.gif)
+
+![Outerplanets](https://github.com/Molero03/Particles/blob/main/outerplanets.gif)
 
