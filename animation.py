@@ -4,16 +4,16 @@ from matplotlib.animation import FuncAnimation
 from matplotlib.patches import Circle
 import matplotlib.cm as cm
 
-interval = 1
-show_trail = True
-trail_width = 1 
-save_to_file = False
-limit=32
-radius=0.05              
-dpi = 150 
+interval = 20 # time between frames in ms
+show_trail = False #show the trajectory of each particle
+trail_width = 1     # width of the trajectory line
+save_to_file = True # save the animation file or show it on screen
+limit=5 # axis limit
+radius=0.05 # planet radius              
+dpi = 150 # resolution of the output file
 
 
-file_out='outerplanets'
+file_out='innerplanets2'
 
 
 with open('simulation_data_planets.txt', "r") as f:
@@ -55,7 +55,7 @@ for i in range(nplanets):
     planet_radius[i]= radius
 
 
-print(frames_data[1])
+
 
 planet_points = list()
 planet_trails = list()
@@ -106,7 +106,7 @@ def init_anim():
 
 
 nframes = len(frames_data)
-print('hola')
+
 
 if nframes > 1:
     # Info FuncAnimation: https://matplotlib.org/stable/api/animation_api.html
@@ -117,7 +117,7 @@ if nframes > 1:
 
     
     if save_to_file:
-        animation.save("{}.mp4".format(file_out), dpi=dpi)
+        animation.save("{}.gif".format(file_out), dpi=dpi)
     else:
         plt.show()
 
